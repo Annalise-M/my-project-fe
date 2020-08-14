@@ -7,6 +7,7 @@ class ListPage extends React.Component {
     state = {
         posters: []
     }
+    
 
     componentDidMount = async () => {
         const data = await fetchPosters()
@@ -34,3 +35,4 @@ class ListPage extends React.Component {
 }
 
 export default ListPage;
+
