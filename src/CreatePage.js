@@ -80,7 +80,7 @@ export default class CreatePage extends Component {
                             price: 
                             <input onChange={this.handlePriceChange} type="number" value={this.state.price} />
                         </label>
-                        <button>Get Poster</button>
+                        <button>Create Poster</button>
                     </form>
                 </div>
         )
