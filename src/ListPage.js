@@ -24,7 +24,7 @@ class ListPage extends React.Component {
                     <h2>Posters:</h2>
                     {
                         this.state.posters.map((poster) => { 
-                            return <Link className="poster" to={`/detail/${poster.id}`} key={`${poster.id}-${poster.name}-${poster.description}-${poster.in_stock}-${poster.category}-${poster.price}`}>
+                            return <Link className="poster" to={`/detail/${poster.id}`} key={`${poster.id}-${poster.name}-${poster.description}-${poster.in_stock}-${poster.category}-${poster.price}`}>{poster.name}
                             </Link>
                         })
                     }

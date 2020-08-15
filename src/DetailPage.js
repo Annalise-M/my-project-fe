@@ -18,7 +18,7 @@ export default class DetailPage extends Component {
         return (
             <div>
                 Here's your sick ass poster! 
-                {this.state.poster.name}
+                {poster.name}
                 {/* need to add more components...? which ones for rendering on detail page? */}
             </div>
         )
