@@ -21,7 +21,6 @@ export default class App extends React.Component {
               <div className="sidebar">
                 <Link to='/'>List</Link>
                 <Link to='/create'>Create</Link>
-                <Link to='/detail/:id'>Detail</Link>
               </div>
               <div className="content">
             <Switch>

@@ -8,6 +8,7 @@ export default class CreatePage extends Component {
         description: '',
         in_stock: true,
         category: 2020,
+        categories: [],
         price: 12.00
     }
 
@@ -25,11 +26,11 @@ export default class CreatePage extends Component {
 
         try {
             await createPoster({
-                name: '',
-                description: '',
-                in_stock: true,
-                category: 2020,
-                price: 12.00
+                name: this.state.name,
+                description: this.state.description,
+                in_stock: this.state.in_stock,
+                category: this.state.category,
+                price: this.state.price
             });
 
             this.setState({
@@ -55,7 +56,7 @@ export default class CreatePage extends Component {
     }
 
     // boolean 
-    handleInStockChange = e => {
+    handleIn_StockChange = e => {
         this.setState({ in_stock: e.target.value });
     }
 
@@ -94,7 +95,7 @@ export default class CreatePage extends Component {
                         </label>
                         <label>
                             Category: 
-                            <select onChange={this.handleCategoryChange} value={this.state.category}>
+                            <select onChange={this.handleCategoryChange} value={this.state.category} key={this.state.category}>
                                 {
                                     this.state.categories.map((category) => <option value={category.id}>{category.year}</option> )
                                 }

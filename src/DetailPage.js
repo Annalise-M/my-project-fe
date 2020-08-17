@@ -18,23 +18,23 @@ export default class DetailPage extends Component {
         const data = await fetchPoster(this.props.match.params.id)
         const categoriesData = await fetchCategories();
         
-        const matchingCategory = categoriesData.body.find(category => category.year = data.body.category_year);
+        const matchingCategory = categoriesData.body.find(category => category.year = data.body.categories_year);
 
         this.setState({
             poster: data.body,
             name: data.body.name,
             description: data.body.description,
             in_stock: data.body.in_stock,
-            categories: matchingCategory.id,
+            category: matchingCategory.id,
+            categories: categoriesData.body,
             price: data.body.price 
         })
     }
-   
-
-
+    
+    
     handleSubmit = async (e) => {
         e.preventDefault();
-
+        
         try {
             await updatePoster(
                 this.props.match.params.id,
@@ -47,7 +47,7 @@ export default class DetailPage extends Component {
                 });
                 
                 const updatedPoster = await fetchPoster(this.props.match.params.id)
-
+                
                 this.setState({
                     name: '',
                     description: '',
@@ -56,47 +56,49 @@ export default class DetailPage extends Component {
                     poster: updatedPoster.body,
                     price: 12.00
                 });
-
+                
             } catch(e) {
                 console.log(e.message)
             }
-    }
-
-
-    handleNameChange = e => {
-        this.setState({ name: e.target.value });
-    }
-
-    handleDescriptionChange = e => {
-        this.setState({ description: e.target.value });
-    }
-
-    // boolean 
-    handleInStockChange = e => {
-        this.setState({ in_stock: e.target.value });
-    }
-
-
-    handleCategoryChange = e => {
-        this.setState({ category_year: e.target.value });
-    }
-
-    handlePriceChange = e => {
-        this.setState({ price: e.target.value });
-    }
-
-    handleDelete = async () => {
-        await deletePoster(this.props.match.params.id);
-
-        this.props.history.push('/');
-    }
-
-
-    render() {
-        return (
-            <div>
+        }
+        
+        
+        handleNameChange = e => {
+            this.setState({ name: e.target.value });
+        }
+        
+        handleDescriptionChange = e => {
+            this.setState({ description: e.target.value });
+        }
+        
+        // boolean 
+        handleIn_StockChange = e => {
+            this.setState({ in_stock: e.target.value });
+        }
+        
+        
+        handleCategoryChange = e => {
+            this.setState({ category_year: e.target.value });
+        }
+        
+        handlePriceChange = e => {
+            this.setState({ price: e.target.value });
+        }
+        
+        handleDelete = async () => {
+            await deletePoster(this.props.match.params.id);
+            
+            this.props.history.push('/');
+        }
+        
+        
+        render() {
+            console.log(this.state.poster);
+            return (
                 <div>
-                    Here's your sick ass poster from {this.state.poster.category_year} Burning Man!
+                <div>
+                    Here's your sick ass poster from {this.state.poster.categories_year} Burning Man!
+                    {/* more poster info here */}
                 </div>
                 <h3>Update this poster?</h3>
                     <form onSubmit={this.handleSubmit}>
@@ -117,7 +119,7 @@ export default class DetailPage extends Component {
                             Category: 
                             <select onChange={this.handleCategoryChange} value={this.state.category}>
                             {
-                                this.state.categories.map((category) => <option value={category.id}>{category.year}</option> )
+                                this.state.categories.map((category) => <option value={category.id} key={category.id}>{category.year}</option> )
                             }
                             </select>
                         </label>
