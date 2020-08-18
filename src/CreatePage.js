@@ -44,6 +44,7 @@ export default class CreatePage extends Component {
         } catch(e) {
             console.log(e.message)
         }
+        this.props.history.push('/');
     }
 
 
