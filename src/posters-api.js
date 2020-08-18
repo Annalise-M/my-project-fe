@@ -1,7 +1,6 @@
 import request from 'superagent';
 
-// const URL = process.env.REACT_APP_API_URL || 'https://hidden-lake-26631.herokuapp.com';
-const URL = 'http://localhost:3001';
+const URL = process.env.REACT_APP_API_URL || 'https://hidden-lake-26631.herokuapp.com';
 
 export function fetchPosters() {
     try{
@@ -33,7 +32,8 @@ export function deletePoster(id) {
 
 
 export function updatePoster(id, updatedPoster) {
-    return request.put(`${URL}/posters/${id}`, updatePoster);
+    console.log(id, 'wazzzzzupppppppppp');
+    return request.put(`${URL}/posters/${id}`, updatedPoster);
 }
 
 

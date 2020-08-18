@@ -90,10 +90,24 @@ export default class DetailPage extends Component {
             
             this.props.history.push('/');
         }
+
+        handleUpdate = async () => {
+            await updatePoster( 
+                this.props.match.params.id,
+                {name: this.state.name,
+                description: this.state.description,
+                in_stock: this.state.in_stock,
+                category: this.state.category,
+                categories_id: this.state.category_id,
+                price: this.state.price});
+
+            this.props.history.push('/');
+        }
         
         
         render() {
             console.log(this.state.poster);
+            
             return (
                 <div>
                 <div>
@@ -130,6 +144,7 @@ export default class DetailPage extends Component {
                     </form>
 
                     <button onClick={this.handleDelete}>Delete</button>
+                    <button onClick={this.handleUpdate}>Update</button>
             </div>
         )
     }

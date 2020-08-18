@@ -7,7 +7,7 @@ export default class CreatePage extends Component {
         name: '',
         description: '',
         in_stock: true,
-        category: 2020,
+        category: 1,
         categories: [],
         price: 12.00
     }
@@ -62,7 +62,8 @@ export default class CreatePage extends Component {
 
     // number
     handleCategoryChange = e => {
-        this.setState({ category_year: e.target.value });
+        
+        this.setState({ category: Number(e.target.value) });
     }
 
     // number
@@ -73,11 +74,6 @@ export default class CreatePage extends Component {
 
     render() {
         return (
-            // <div className="sidebar">
-            //     <Link to='/'>List</Link>
-            //     <Link to='/create'>Create</Link>
-            //     <Link to='/detail/:id'>Detail</Link>
-            // </div>
                 <div className="content">
                     <h2>CREATE YOUR POSTER!</h2>
                     <form onSubmit={this.handleSubmit}>
@@ -95,9 +91,9 @@ export default class CreatePage extends Component {
                         </label>
                         <label>
                             Category: 
-                            <select onChange={this.handleCategoryChange} value={this.state.category} key={this.state.category}>
+                            <select onChange={this.handleCategoryChange} value={this.state.category}>
                                 {
-                                    this.state.categories.map((category) => <option value={category.id}>{category.year}</option> )
+                                    this.state.categories.map((category) => <option value={category.id} key={category.id}>{category.year}</option> )
                                 }
                             </select>
                         </label>
