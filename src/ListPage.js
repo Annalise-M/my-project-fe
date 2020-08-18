@@ -1,7 +1,7 @@
 import React from 'react';
 import { fetchPosters } from './posters-api.js';
 import { Link } from 'react-router-dom';
-
+import './App.css';
 
 class ListPage extends React.Component {
     state = {
@@ -17,13 +17,9 @@ class ListPage extends React.Component {
         })
     }
 
+
     render() {
         return (
-            // <div className="sidebar">
-            //     <Link to='/'>List</Link>
-            //     <Link to='/create'>Create</Link>
-            //     <Link to='/detail/:id'>Detail</Link>
-            // </div>
                 <div className="posters">
                     <header className="App-header">
                         <h2>Posters:</h2>
@@ -43,6 +39,7 @@ class ListPage extends React.Component {
         )
     }
 }
+
 
 export default ListPage;
 

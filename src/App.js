@@ -19,8 +19,12 @@ export default class App extends React.Component {
           <Router>
             <main>
               <div className="sidebar">
-                <Link to='/'>List</Link>
-                <Link to='/create'>Create</Link>
+                <div>
+                  <Link to='/'>List</Link>
+                </div>
+                <div>
+                  <Link to='/create'>Create</Link>
+                </div>
               </div>
               <div className="content">
             <Switch>

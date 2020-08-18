@@ -2,10 +2,12 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -13,19 +15,29 @@
   }
 }
 
+/* main app.js header */
 .App-header {
+  /* display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; */
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(199, 194, 194);
 }
 
 .App-link {
-  color: #61dafb;
+  color: rgb(250, 68, 68);
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +48,142 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* content || link coloring */
+a {
+  color: lightcoral
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: blueviolet;
+}
+
+a:hover {
+  color: hotpink
+}
+
+label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: row;
+  color: lightcoral;
+  border: double plum;
+  padding: 33px;
+  margin: 2px;
+}
+
+
+h2 {
+  color: rgb(250, 68, 68)
+}
+
+
+/* content to fill all space when present */
+.content {
+  height: 100%;
+}
+
+.posters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: lightcoral;
+  padding: 30px;
+  border: double plum;
+  margin: 2px;
+}
+
+.poster{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;  
+  color: lightcoral;
+  border: 1px dotted coral;
+  padding: 30px;
+  margin: 2px;
+}
+
+/* main section design on app.js */
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-template-columns: 125px 1fr;
+  width: 100%;
+  min-height: 100vh;
+  color: #282c34;
+  border: 1px double coral;
+  padding: 30px;
+  margin: 2px;
+}
+
+/* designing sidebar on main / list page in app.js */
+.sidebar {
+  
+  
+  
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  
+}
+
+/* list page holds the following elements to be designed
+  div "posters"
+  Link "poster" */
+
